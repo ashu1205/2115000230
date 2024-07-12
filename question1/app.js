@@ -30,7 +30,7 @@ app.get('/numbers/:type', async (req, res) => {
         console.log(URL);
         let resp = await fetch(URL, {
             headers: {
-                'Authorization': `${token}`
+                'Authorization': `Bearer ${token}`
                 }
         });
 
@@ -42,8 +42,8 @@ app.get('/numbers/:type', async (req, res) => {
         }
 
         let data = await resp.json()
-        // console.log(resp);
         console.log(data);
+        // console.log(data);
         let numbers=[]
         numbers.push(data.numbers)
         let prevNumbers=[]
