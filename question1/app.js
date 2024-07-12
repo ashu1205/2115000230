@@ -2,12 +2,7 @@ const express = require('express')
 const app = express();
 const PORT = 9876
 const windowSize=10
-let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzIwNzczMjcwLCJpYXQiOjE3MjA3NzI5NzAsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6IjI3NDJmMTMxLTMyNDItNGFlYS1iNmZmLWUwNDRjYjgxNmRmMCIsInN1YiI6ImFzaHV0b3NoLmNoYWhhcl9jczIxQGdsYS5hYy5pbiJ9LCJjb21wYW55TmFtZSI6ImFmZm9yZE1lZGljYWwiLCJjbGllbnRJRCI6IjI3NDJmMTMxLTMyNDItNGFlYS1iNmZmLWUwNDRjYjgxNmRmMCIsImNsaWVudFNlY3JldCI6IllpWUxRQldVSFpjZ3d5Y0EiLCJvd25lck5hbWUiOiJBc2h1dG9zaCBDaGFoYXIiLCJvd25lckVtYWlsIjoiYXNodXRvc2guY2hhaGFyX2NzMjFAZ2xhLmFjLmluIiwicm9sbE5vIjoiMjExNTAwMDIzMCJ9.YJHtCfmH9BBbzAtc75aX-b9gLStSxI2WeggO82cjE9k"
-
-let headers = {
-
-}
-
+let token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzIwNzgzNjM3LCJpYXQiOjE3MjA3ODMzMzcsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6IjI3NDJmMTMxLTMyNDItNGFlYS1iNmZmLWUwNDRjYjgxNmRmMCIsInN1YiI6ImFzaHV0b3NoLmNoYWhhcl9jczIxQGdsYS5hYy5pbiJ9LCJjb21wYW55TmFtZSI6ImFmZm9yZE1lZGljYWwiLCJjbGllbnRJRCI6IjI3NDJmMTMxLTMyNDItNGFlYS1iNmZmLWUwNDRjYjgxNmRmMCIsImNsaWVudFNlY3JldCI6IllpWUxRQldVSFpjZ3d5Y0EiLCJvd25lck5hbWUiOiJBc2h1dG9zaCBDaGFoYXIiLCJvd25lckVtYWlsIjoiYXNodXRvc2guY2hhaGFyX2NzMjFAZ2xhLmFjLmluIiwicm9sbE5vIjoiMjExNTAwMDIzMCJ9.wYWLaMNYgocgK6ueQ0AjXxPOOuHCDmnU0v4FV2GGvOw"
 
 app.get('/numbers/:type', async (req, res) => {
     try {
@@ -51,7 +46,7 @@ app.get('/numbers/:type', async (req, res) => {
         prevNumbers=currNumbers;
         currNumbers=numbers.slice(0,windowSize)
 
-        const sum=currNumbers.reduce((acc,num)=>acc+num)
+        const sum=currNumbers.reduce((acc,num)=> acc+num)
         const avg=sum/windowSize
 
         res.json({
